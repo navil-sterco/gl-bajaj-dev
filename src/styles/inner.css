@@ -650,7 +650,8 @@
 .acredation_swiper .swiper-wrapper { padding-bottom: 5rem; }
 /* ==============Facilities & Policy page Start============= */
 .facilities_policy { padding-block: 5rem 12rem; }
-.facilities_policy .policy_subgroup { margin-bottom: 5rem; }
+.facilities_policy .policy_subgroup { margin-bottom: 7rem; }
+.facilities_policy .policy_subgroup .grid_title{margin-bottom:2rem;}
 .facilities_policy h2 { margin-bottom: 4rem; }
 .fac_policy_list { background-color: var(--color-F5); margin-top: 2rem; padding: 2.5rem 4rem; display: grid; grid-template-columns: 75% auto; justify-content: space-between; position: relative; transition: 0.5s; }
 .fac_policy_list:hover { background-color: var(--color-ed); }
@@ -1518,9 +1519,12 @@
 .iqac-menu-inner .about_menu_links li a { padding-bottom: 4.3rem; color: var(--color-black); }
 .iqac-menu-inner .about_menu_links li a.active { border-bottom: 3px solid var(--color-92); font-weight: 600; }
 .facilities_policy.iqac-event.dg-pathshala { padding-block: 5rem 5rem; border-bottom: 1px solid var(--color-C0); }
-.iqac-event .fac_mainpdf{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;}
-.iqac-event .fac_mainpdf .fac_policy_list{ padding: 2rem; margin-top: 0; display: flex; flex-direction: column;}
-.iqac-event .fac_mainpdf .fac_policy_list .fac_policy_right{ display: flex; gap: 2rem; margin-top: 3rem;}
+.iqac-event .fac_mainpdf,
+.about-us-policies-disclosures .fac_mainpdf{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;}
+.iqac-event .fac_mainpdf .fac_policy_list,
+.about-us-policies-disclosures .fac_mainpdf .fac_policy_list{ padding: 2rem; margin-top: 0; display: flex; flex-direction: column;}
+.iqac-event .fac_mainpdf .fac_policy_list .fac_policy_right,
+.about-us-policies-disclosures .fac_mainpdf .fac_policy_list .fac_policy_right{ display: flex; gap: 2rem; margin-top: 3rem;}
 .dg-pathshala-video-link h2,
 .dg-pathshala h2 { font: var(--font-36); color: var(--color-92); letter-spacing: -1.8px; }
 .digital-pathshala-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.3rem 2rem; margin-inline: -1.5rem; }

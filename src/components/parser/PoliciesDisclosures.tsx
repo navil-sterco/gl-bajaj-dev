@@ -5,10 +5,27 @@ import { apiFetch } from "@/src/lib/api"
 import { useQuery } from "@tanstack/react-query"
 import { SkeletonGroup } from "../ui/Skeleton";
 import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
+const slugify = (s: string) =>
+    s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 function isNestedPolicyMap(v: unknown): v is Record<string, any[]> {
     return typeof v === "object" && v !== null && !Array.isArray(v);
 }
+
+const PUBLIC_DISCLOSURE_KEY = "Public Disclosure";
+
+// Groups a flat array by policy_groups, keeping the API order (display_order)
+const groupByPolicyGroup = (items: any[]): [string, any[]][] => {
+    const map = new Map<string, any[]>();
+    items.forEach((item) => {
+        const group = item?.policy_groups?.trim() || "Others";
+        if (!map.has(group)) map.set(group, []);
+        map.get(group)!.push(item);
+    });
+    return Array.from(map.entries());
+};
 
 const getPolicyLists = async () => {
     const { data, error } = await apiFetch(`policies-pdf`);
@@ -30,41 +47,56 @@ const PolicyItem = ({ item, idx }: { item: any; idx: number }) => (
                     alt="pdf"
                 />
             </figure>
+            <p>Download</p>
         </div>
         <a target="_blank" href={item.pdf} className="strech_link" rel="noreferrer" />
     </div>
 );
 
-const PolicyTabContent = ({ value }: { value: any }) => {
+const PolicyGroupList = ({ groups }: { groups: [string, any[]][] }) => (
+    <>
+        {groups.map(([groupName, groupItems]) => (
+            <div key={groupName} className="policy_subgroup">
+                <h4 className="grid_title">{groupName}</h4>
+                <div className="fac_mainpdf">
+                    {groupItems.map((item: any, idx: number) => (
+                        <PolicyItem key={item.id ?? idx} item={item} idx={idx} />
+                    ))}
+                </div>
+            </div>
+        ))}
+    </>
+);
+
+const PolicyTabContent = ({ tabKey, value }: { tabKey: string; value: any }) => {
+    // Public Disclosure: flat array -> group by policy_groups
+    if (tabKey === PUBLIC_DISCLOSURE_KEY && Array.isArray(value)) {
+        return <PolicyGroupList groups={groupByPolicyGroup(value)} />;
+    }
+
+    // Everything else stays exactly as before
     if (Array.isArray(value)) {
         return (
-            <>
+            <div className="fac_mainpdf">
                 {value.map((item: any, idx: number) => (
                     <PolicyItem key={item.id ?? idx} item={item} idx={idx} />
                 ))}
-            </>
+            </div>
         );
     }
 
     if (isNestedPolicyMap(value)) {
-        return (
-            <>
-                {Object.entries(value).map(([subKey, subItems]) => (
-                    <div key={subKey} className="policy_subgroup">
-                        <h4>{subKey}</h4>
-                        {subItems.map((item: any, idx: number) => (
-                            <PolicyItem key={item.id ?? idx} item={item} idx={idx} />
-                        ))}
-                    </div>
-                ))}
-            </>
-        );
+        return <PolicyGroupList groups={Object.entries(value)} />;
     }
 
     return null;
 };
 
 export default function PoliciesDisclosures() {
+    const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const tabParam = searchParams.get("tab");
     const [activeTab, setActiveTab] = useState<string | null>(null);
 
     const { data, isLoading, isError } = useQuery({
@@ -78,7 +110,14 @@ export default function PoliciesDisclosures() {
 
     // Set initial active tab once data loads
     const tabs = data?.entries ?? [];
-    const resolvedActiveTab = activeTab ?? data?.firstKey ?? null;
+    const resolvedActiveTab =
+        tabs.find(([key]) => slugify(key) === tabParam)?.[0] ??
+        data?.firstKey ??
+        null;
+
+    const handleTabChange = (key: string) => {
+        router.replace(`${pathname}?tab=${slugify(key)}`, { scroll: false });
+    };
 
     if (isLoading) {
         return (
@@ -117,7 +156,7 @@ export default function PoliciesDisclosures() {
                         <li key={key} className={`tab_item ${resolvedActiveTab === key ? "active" : ""}`}>
                             <button
                                 type="button"
-                                onClick={() => setActiveTab(key)}
+                                onClick={() => handleTabChange(key)}
                                 className="tab_btn"
                             >
                                 {key}
@@ -129,8 +168,8 @@ export default function PoliciesDisclosures() {
 
             {/* Tab Content */}
             <div className="policy_tab_content" data-aos="fade-up" data-aos-delay="500">
-                {activeContent != null && (
-                    <PolicyTabContent value={activeContent} />
+                {activeContent != null && resolvedActiveTab && (
+                    <PolicyTabContent tabKey={resolvedActiveTab} value={activeContent} />
                 )}
             </div>
         </>
