@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Fancybox, FancyboxOptions } from '@fancyapps/ui'
 import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import '@/src/styles/fancybox.css'
+import { generateDate } from '@/src/lib/generateDate';
 
 function getYoutubeId(url: string): string | null {
     const match = url.match(
@@ -44,6 +45,7 @@ function isImageItem(item: GalleryItem): boolean {
 
 export default function GalleryDetailPage({ gallery_data, slug }: { gallery_data: any, slug: string }) {
     const data = gallery_data?.data;
+    const cmsData = gallery_data?.cms?.workshop_detail ?? null;
     const allItems: GalleryItem[] = data?.mapping_items?.items ?? [];
 
     const [galleryUrls, setGalleryUrls] = useState<GalleryItem[]>(allItems);
@@ -158,7 +160,10 @@ export default function GalleryDetailPage({ gallery_data, slug }: { gallery_data
                 <div className="container25">
                     <div className='top'>
                         <div className="gallery_list_header">
-                            {data?.title && <h1>{data.title}</h1>}
+                            <div>
+                                {data?.date && <p className='date'>{generateDate(data.date)}</p>}
+                                {data?.title && <h1 dangerouslySetInnerHTML={{__html:data.title}} />}
+                            </div>
                             <div className="gallery_tab">
                                 
                                 {hasImages && (
@@ -202,6 +207,10 @@ export default function GalleryDetailPage({ gallery_data, slug }: { gallery_data
                         
                         {data?.description && (
                             <div className='gallery_description' dangerouslySetInnerHTML={{__html:data.description}} />
+                        )}
+
+                        {cmsData && (
+                            <div className='gallery_description' dangerouslySetInnerHTML={{__html:cmsData}} />
                         )}
                     </div>
 

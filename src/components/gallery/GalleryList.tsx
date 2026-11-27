@@ -2,6 +2,7 @@ import { BASE_URL } from "@/src/config/config";
 import Image from "next/image";
 import Link from "next/link";
 import PaginationWrapper from "../common/pagination/PaginationWrapper";
+import { generateDate } from "@/src/lib/generateDate";
 
 export default function GalleryList({data, currentPage='gallery', customClass, parentSlug, slug, paginationBasePath}:{data:any, currentPage?:string, customClass?:string, parentSlug?:string, slug?:string; paginationBasePath?:string}){
     const pagination = data;
@@ -31,9 +32,14 @@ export default function GalleryList({data, currentPage='gallery', customClass, p
                                     </span>
                                 )}
                             </figure>
-                            {item?.title && (
-                                <p>{item.title}</p>
-                            )}
+                            <div className="gallery_list_content">
+                                {item?.date && (
+                                    <p className="date">{generateDate(item.date)}</p>
+                                )}
+                                {item?.title && (
+                                    <p>{item.title}</p>
+                                )}
+                            </div>
                             {item?.slug && (
                                 <Link href={`${BASE_URL}${parentSlug}/${currentPage}/${item.slug}`} className="strech_link" />
                             )}
