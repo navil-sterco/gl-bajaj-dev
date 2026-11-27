@@ -75,6 +75,10 @@
 .admissions-prospectus-page .pdf_iframe{padding:12rem 0 ;}
 .pdf_iframe iframe{height: 100rem;}
 
+.guest_grid{display:grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;}
+.student-corner-clubs-anvitha-club-page .in_essence_section{padding-top:0;}
+.student-corner-clubs-anvitha-club-page .in_essence_section .flash-effect-2{margin-top:0;}
+
 /* ── RESPONSIVE: convert to accordion on mobile ─────────── */
   @media (max-width: 768px) {
  .xtabs_nav { display: none; /* hide tab buttons */ }
@@ -412,7 +416,9 @@
 .gallery_list_bx figure { position: relative; }
 .gallery_list_bx span { position: absolute; bottom: 0; left: 2.5rem; display: flex; background-color: rgba(0, 0, 0, 0.7); padding: 0.8rem 1rem; gap: 1rem; }
 .gallery_list_bx span figcaption { display: flex; color: var(--color-white); gap: 0.5rem; align-items: center; font: var(--font-14); font-weight: 400; }
-.gallery_list_bx p { font: var(--font-16); color: var(--color-33); font-weight: 400; padding-inline: 2.5rem; margin-block: 2rem; }
+.gallery_list_bx .gallery_list_content{padding-inline: 2.5rem; padding-block: 2rem;}
+.gallery_list_bx p { font: var(--font-16); color: var(--color-33); font-weight: 400;   }
+.gallery_list_bx .date{font: var(--font-14); margin-bottom:1rem;}
 .fancybox__caption { font: var(--font-18); padding-top: 5rem !important; }
 .fancybox__counter span { color: var(--color-white); }
 .fancybox__nav .carousel__button.is-next { right: 22%; background-color: var(--color-white); border-radius: 0; color: #ff0000; }
@@ -421,6 +427,7 @@
 .fancybox__nav .carousel__button.is-next svg { width: 1.3rem; }
 .gallery_list_header { padding-block: 6rem 5rem; display: flex; justify-content: space-between; }
 .gallery_list_header .gallery_tab > .active{background: #ddd;}
+.gallery_list_header .date{font: var(--font-14); margin-bottom:1rem;}
 .gallery_list_section h1 { color: var(--color-64); font: var(--font-36); letter-spacing: -0.18rem; }
 .gallery_details { position: relative; background-color: var(--color-F5); break-inside: avoid; }
 .gallery_details figure { position: relative; cursor: pointer; }
@@ -973,6 +980,7 @@
 .activies_col { position: relative; }
 .activies_col p { padding-top: 1.3rem; }
 .activies_col .activities_caption p{font: var(--font-22); font-weight: 600; line-height: 2.5rem; color:var(--color-64);}
+.activies_col .activities_caption .date{font: var(--font-16); color: var(--color-33); margin-bottom: 0;}
 .dep_clubs_card{display: grid; grid-template-columns: 40% auto; position:relative; gap: 15rem;}
 .dep_clubs_card .font36{margin-bottom: 5rem;}
 .dep_club_contents .content,
@@ -2108,6 +2116,7 @@ section.facilities_policy.iqac-event.institutional-distinctiveness { padding-bot
 .our_recruiters .our_recruiters-grid li:hover img { transform: scale(1.08); }
 .placement_main { padding-block: 8rem 10rem; }
 .placement_main .row { margin: 0; }
+.placement_main .placement_select{padding: 1rem 2rem 1rem 1rem; font:var(--font-14); border: 1px solid #ccc; background: #fff; cursor: pointer; min-width: 140px;}
 .placement_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem; }
 .place_box { background-color: #f3e9dced; margin-top: 3rem;}
 .place_infobox h3 { font: var(--font-24); color: #633d27; margin-bottom: 1.5rem; font-weight: bold; }
