@@ -1,0 +1,71 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { BASE_URL } from "@/src/config/config";
+import { scrollToHashWhenReady } from "@/src/lib/scrollToHash";
+
+interface Tab {
+  slug: string;
+  title: string;
+}
+
+interface NavLinksProps {
+  tabs: Tab[];
+  activeSlug: string;
+  tabTitle?: string;
+  pathname: string;
+  parentSlug?:string;
+}
+
+const scrollToSection = (id: string) => {
+  scrollToHashWhenReady(`#${id}`, { behavior: "smooth" });
+  window.history.replaceState(null, "", window.location.pathname);
+};
+
+export default function NavLinks({ tabs, activeSlug, tabTitle, pathname, parentSlug }: NavLinksProps) {
+  const buildHref = (item: Tab) => {
+    return pathname.includes("department")
+      ? `${BASE_URL}${parentSlug}/departments/${item.slug}`
+      : BASE_URL + item.slug;
+  };
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    // If href contains '#', extract the hash and scroll to section
+    if (href.includes("#")) {
+      const hash = href.split("#")[1];
+      scrollToSection(hash);
+      // e.preventDefault();
+    }
+    // Otherwise, let Next.js <Link> handle normal navigation
+  };
+
+  return (
+    <div className="inner_nav">
+      {tabTitle && (
+        <div className="about_menu_label paragraph">{tabTitle}</div>
+      )}
+      <ul className="about_menu_links">
+        {tabs.map((item, itemIdx) => {
+          const href = buildHref(item);
+          if(pathname.includes('department') && item.title.toLowerCase() == 'home') return;
+          return (
+            <li key={itemIdx}>
+              <Link
+                href={href}
+                prefetch={false}
+                className={`paragraph ${item.slug === activeSlug ? "active" : ""}`}
+                onClick={(e) => handleClick(e, href)}
+              >
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}

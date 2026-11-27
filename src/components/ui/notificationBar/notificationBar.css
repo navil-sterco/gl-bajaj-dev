@@ -1,0 +1,64 @@
+.hero_notificationmain .container{margin: auto;}
+.hero_nofi_card { display: flex; align-items: center; background: var(--color-03); backdrop-filter: blur(4px); 
+  padding: 1.6rem 3.2rem 1.6rem 5.3rem; gap: 4.6rem; margin: auto; margin-top: -3.1rem; z-index: 9; position: relative; }
+.hero_nofi_card img{width: 0.9rem;height: 0.4rem;cursor: pointer;    margin: auto;}
+.notifi_title{color: var(--color-white);font: var(--font-24);font-weight: bold ;}
+.notifi_text{ display: grid; color: var(--color-white); gap: 2.7rem; grid-template-columns: 95% 2.3%; align-items: center; overflow: hidden;}
+/* .notifi_text p{font: var(--font-16);white-space: nowrap;overflow: hidden;text-overflow: ellipsis; color:#fff;} */
+/* .notifi_text .animate-ticker{overflow:hidden;} */
+.hero_nofi_card .close_btn{background: #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    display: flex;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;}
+.ticker-track{overflow:hidden;}
+/* .ticker-track p:first-child{color:red;} */
+
+
+
+/* notificationBar.css */
+
+.ticker-track {
+  display: flex;
+  gap: 40px;             /* space between notifications */
+  width: max-content;    /* shrink-wraps all items side by side */
+  animation: ticker 24s linear infinite;
+}
+
+/* ✅ Hover pauses the WHOLE group at once */
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;   /* prevent wrapping */
+  text-decoration: none;
+  color: inherit;
+  color:white;
+}
+
+.ticker-item  span{
+  color: #fff;
+  font:var(--font-16);
+}
+
+.ticker-item:hover {
+  text-decoration: underline;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }  /* -50% because items are doubled */
+}
+
+@media (max-width:992px){
+  .hero_nofi_card{ display: none;}
+}

@@ -1,0 +1,310 @@
+import ApiErrorFallback from "@/src/components/common/ApiErrorFallback";
+import BlogFeaturedSlider from "@/src/components/blogs/BlogFeaturedSlider";
+import BlogSidebar from "@/src/components/blogs/BlogSidebar";
+import ReactParser from "@/src/components/common/reactParser/ReactParser";
+import SocialShare from "@/src/components/common/SocialShare";
+import { BASE_URL } from "@/src/config/config";
+import { apiFetch } from "@/src/lib/api";
+import Image from "next/image";
+import BlogCommentForm from "@/src/components/blogs/BlogCommentForm";
+import { notFound } from "next/navigation";
+import { buildBlogDetailSchema } from "@/src/lib/schema/blogDetailSchema";
+import { getPageSEO } from "@/src/lib/seo";
+import { buildGlobalSchema } from "@/src/lib/schema/globalSchema";
+import React from "react";
+import type { IRecentBlogs } from "@/src/components/blogs/BlogListingClient";
+import Link from "next/link";
+
+interface SearchParams {
+  search?: string;
+  category?: string;
+  year?: string;
+  month?: string;
+}
+
+function buildFilterQuery(params: {
+  search: string;
+  category: string;
+  year: string;
+  month: string;
+}) {
+  const parts: string[] = [];
+  if (params.search) parts.push(`search=${encodeURIComponent(params.search)}`);
+  if (params.category)
+    parts.push(`category=${encodeURIComponent(params.category)}`);
+  if (params.year) parts.push(`year=${encodeURIComponent(params.year)}`);
+  if (params.month) parts.push(`month=${encodeURIComponent(params.month)}`);
+  return parts.length ? `?${parts.join("&")}` : "";
+}
+
+function formatBlogDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  return getPageSEO(`blogs/${slug}`);
+}
+
+function BlogSections({ sections }: { sections: any }) {
+  if (!sections) return null;
+  if (typeof sections === "string") {
+    return <ReactParser html={sections} />;
+  }
+  return sections?.map((item: any, idx: number) => (
+    <React.Fragment key={idx}>
+      {/* {item?.title && (
+        <h3>{item.title}</h3>
+      )} */}
+      {item?.editors?.length > 0 &&
+        item.editors.map((editorItem: any, editorIdx: number) => (
+          <ReactParser key={editorIdx + idx} html={editorItem?.content} />
+        ))}
+    </React.Fragment>
+  ));
+}
+
+export default async function BlogDetailPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<SearchParams>;
+}) {
+  const { slug: blogSlug } = await params;
+  const queryParams = await searchParams;
+  const search = queryParams.search || "";
+  const category = queryParams.category || "";
+  const year = queryParams.year || "";
+  const month = queryParams.month || "";
+  const hasFilters = Boolean(search || category || year || month);
+
+  const filterQuery = buildFilterQuery({ search, category, year, month });
+  const fetchOptions = hasFilters ? { cache: "no-store" as const } : undefined;
+  const listSlug = "blogs";
+
+  const [{ data, error }, seoData] = await Promise.all([
+    apiFetch(`blogs/${blogSlug}${filterQuery}`, fetchOptions),
+    getPageSEO(`blogs/${blogSlug}`),
+  ]);
+
+  if (error) notFound();
+
+  const details = data?.details;
+  if (!details) notFound();
+
+  const featuredBlogs: any[] = data?.featuredBlogs ?? [];
+  const comments: any[] = data?.comments ?? [];
+  const listingPath = `${BASE_URL}${listSlug}`;
+
+  const blogDetailSchemaArgs = {
+    blogUrl: `${BASE_URL}blogs/${blogSlug}` || "",
+    headline: details?.title || "",
+    summary: details?.description || "",
+    images: [details?.image],
+    datePublishedIso: details?.date || "",
+    dateModifiedIso: details?.date || "",
+  };
+  const blogDetailSchema = buildBlogDetailSchema(blogDetailSchemaArgs);
+
+  const globalSchemaArgs = {
+    canonicalUrl: seoData?.alternates?.canonical || BASE_URL || "",
+    pageTitle: seoData?.title || "",
+    metaDescription: seoData?.description || "",
+    primaryImageUrl: details?.image || "",
+    datePublishedIso: details?.date || "",
+    dateModifiedIso: details?.date || "",
+    languageTag: "en-IN",
+    currentPageName: details?.title || "",
+    currentPageSlug: `${BASE_URL}blogs/${blogSlug}`,
+    parentMenus: [
+      {
+        title: "Blogs",
+        url: "blogs",
+      },
+    ],
+  };
+
+  const recentBlogs:IRecentBlogs[]  = data?.recentBlogs ?? [];
+
+  const globalSchema = buildGlobalSchema(globalSchemaArgs);
+
+  console.log('details',details);
+
+  return (
+    <>
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema),
+          }}
+        />
+      )}
+      {globalSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
+        />
+      )}
+      {blogDetailSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogDetailSchema) }}
+        />
+      )}
+      <section className="blog_details_banner">
+        <div className="container-lg">
+          <div className="txdcx_banner_img">
+            <figure>
+              <Image
+                src={details.image || "/images/blog-details-banner.webp"}
+                alt={details?.image_alt || details.title || "GL Bajaj"}
+                className="img-fluid w-100"
+                width={1200}
+                height={500}
+                priority
+              />
+            </figure>
+            <figcaption>
+              <div className="newst_details_header">
+                {details.date && (
+                  <div className="date">{formatBlogDate(details.date)}</div>
+                )}
+                
+              </div>
+              {details.title && <h3>{details.title}</h3>}
+              {details.description && <p>{details.description}</p>}
+            </figcaption>
+          </div>
+        </div>
+      </section>
+
+      <section className="blog_details">
+        <div className="container25">
+          <div className="blog_details_grid">
+            <div className="blog_details_left">
+              {details.description && !details.sections && (
+                <blockquote>{details.description}</blockquote>
+              )}
+              <SocialShare title={details.title || ""} />
+
+              <BlogSections sections={details.sections} />
+
+              <BlogFeaturedSlider listSlug={listSlug} blogSlug={blogSlug} />
+
+              <BlogCommentForm blogSlug={blogSlug} />
+
+              {Array.isArray(details.tags) && details.tags.length > 0 && (
+                <div className="blog_detail_tags" aria-label="Blog tags">
+                  <h4>Tags:</h4>
+                  <ul>
+                    {details.tags.map((tag: any) => (
+                      <li key={tag.id}>
+                        <Link href={`${BASE_URL}${listSlug}/tags/${tag.slug}`}>
+                          {tag.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* <div className="admin_form">
+                <div className="admin_header">
+                  <figure>
+                    <img
+                      src="/images/admin-profile.webp"
+                      className="img-fluid"
+                      alt="admin profile"
+                    />
+                  </figure>
+                  <div className="admin_details">
+                    <h5>Admin</h5>
+                    <p>Author</p>
+                  </div>
+                </div>
+
+                <h4 className="font24">Leave a Reply</h4>
+                <p>
+                  Your email address will not be published. Required fields are marked *
+                </p>
+                <form>
+                  <div className="row g-4">
+                    <div className="col-lg-6">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="First name"
+                        aria-label="First name"
+                      />
+                    </div>
+                    <div className="col-lg-6">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Last name"
+                        aria-label="Last name"
+                      />
+                    </div>
+                    <div className="col-lg-12">
+                      <input
+                        type="email"
+                        className="form-control"
+                        placeholder="Email"
+                        aria-label="Email"
+                      />
+                    </div>
+                    <div className="col-lg-12">
+                      <textarea
+                        className="form-control"
+                        id="blogComment"
+                        rows={5}
+                        placeholder="Comment"
+                      />
+                    </div>
+                    <div className="col-lg-12">
+                      <div className="form-check">
+                        <input className="form-check-input" type="checkbox" id="gridCheck" />
+                        <label className="form-check-label" htmlFor="gridCheck">
+                          Save my name, email, and website in this browser for the next time I
+                          comment.
+                        </label>
+                      </div>
+                    </div>
+                    <div className="col-lg-12">
+                      <button type="submit" className="btn post_cumment">
+                        Post Comment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div> */}
+            </div>
+
+            <BlogSidebar
+              recentBlogs={recentBlogs}
+              featuredBlogs={featuredBlogs}
+              comments={comments}
+              currentCategory={category}
+              currentYear={year}
+              currentMonth={month}
+              currentSearch={search}
+              slug={listSlug}
+              listingPath={listingPath}
+              showSearch={false}
+            />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

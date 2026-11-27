@@ -1,0 +1,95 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import Image from "next/image";
+
+export default function ResearchInnovation({homeData, pageName}:{homeData:any; pageName:string}) {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const [mounted, setMounted] = useState(false)
+
+  const slides = homeData?.modular?.["research-innovation"];
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const aos = (delay = "200") => mounted
+    ? { "data-aos": "fade-up", "data-aos-delay": delay }
+    : {}
+
+  return (
+    <div className="research_slider_wrapper">
+      <Swiper
+        modules={[Navigation]}
+        slidesPerView={1.2}
+        spaceBetween={20}
+        autoplay={false}
+        navigation={{
+          prevEl: ".research_innovation_left",
+          nextEl: ".research_innovation_right",
+        }}
+        // onSwiper={(swiper:any) => {
+        //   // Re-assign navigation refs after swiper mounts
+        //   swiper.params.navigation.prevEl = prevRef.current;
+        //   swiper.params.navigation.nextEl = nextRef.current;
+        //   swiper.navigation.init();
+        //   swiper.navigation.update();
+        // }}
+        breakpoints={{
+          768: {
+            slidesPerView: 1.3,
+            spaceBetween: 15,
+          },
+          991: {
+            slidesPerView: 2.3,
+            spaceBetween: 15,
+          },
+          1200: {
+            slidesPerView: 2.75,
+            spaceBetween: 20,
+          },
+        }}
+      >
+        {slides?.map((slide: any, index: number) => (
+          <SwiperSlide key={index}>
+            <div className="research_card" {...aos("200")}>
+              <figure className="flash-effect">
+                <Image
+                  src={slide?.image || ""}
+                  alt={slide?.alt || pageName}
+                  width={575}
+                  height={429}
+                  loading="lazy"
+                  className="img-fluid w-100"
+                />
+              </figure>
+              <div className="res_caption">
+                {slide?.names && (
+                  <span >{slide.names}</span>
+                )}
+                {slide?.title && (
+                  <p>{slide.title}</p>
+                )}
+              </div>
+              {slide?.url && (
+                <a className="strech_link" href={slide.url} ></a>
+              )}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div className="navigation_btn" {...aos("200")}>
+        <div ref={prevRef} className="swiper_prev_custom research_innovation_left">
+          <img src="/images/icons/arrow.svg" alt="arrow" className="img-fluid" />
+        </div>
+        <div ref={nextRef} className="swiper_next_custom research_innovation_right">
+          <img src="/images/icons/arrow.svg" alt="arrow" className="img-fluid" />
+        </div>
+      </div>
+    </div>
+  );
+}

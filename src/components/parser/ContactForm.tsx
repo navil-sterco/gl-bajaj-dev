@@ -1,0 +1,221 @@
+"use client";
+
+import { useState } from "react";
+import { API_URL, RECAPTCHA_SITE_KEY } from "@/src/config/config";
+import RecaptchaField from "./RecaptchaField";
+import { useSearchParams } from "next/navigation";
+
+type FieldErrors = Record<string, string[] | string>;
+
+type ContactFormState = {
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
+  description: string;
+  type: string;
+};
+
+type ApiResponse = {
+  success?: boolean;
+  description?: string;
+  errors?: FieldErrors;
+};
+
+const INITIAL_FORM: ContactFormState = {
+  name: "",
+  address: "",
+  phone: "",
+  email: "",
+  description: "",
+  type: "admission",
+};
+
+export default function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [fieldsData, setFieldsData] = useState<ContactFormState>(INITIAL_FORM);
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [submitState, setSubmitState] = useState({ status: "idle", message: "" });
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [recaptchaKey, setRecaptchaKey] = useState(0);
+  const searchParams = useSearchParams();
+
+  const utm = {
+    utm_source: searchParams.get("utm_source") ?? "",
+    utm_medium: searchParams.get("utm_medium") ?? "",
+    utm_campaign: searchParams.get("utm_campaign") ?? "",
+    utm_term: searchParams.get("utm_term") ?? "",
+    utm_content: searchParams.get("utm_content") ?? "",
+    source_url:window.location.href
+  };
+
+  const resetFields = () => {
+    setFieldsData(INITIAL_FORM);
+    setErrors({});
+  };
+
+  const resetRecaptcha = () => {
+    setRecaptchaToken(null);
+    setRecaptchaKey((key) => key + 1);
+  };
+
+  const getFieldError = (field: string) => {
+    const value = errors[field];
+    if (Array.isArray(value)) return value[0];
+    return typeof value === "string" ? value : "";
+  };
+
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+
+    setFieldsData((state) => ({
+      ...state,
+      [name]: value,
+    }));
+
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
+  };
+
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrors({});
+
+    if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
+      setErrors({ recaptcha: ["Please complete the reCAPTCHA verification."] });
+      setSubmitState({ status: "error", message: "Please complete the reCAPTCHA verification." });
+      return;
+    }
+
+    setIsLoading(true);
+    setSubmitState({ status: "loading", message: "" });
+
+    try {
+      const response = await fetch(`${API_URL}contact-form`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...fieldsData,
+          ...utm,
+          ...(recaptchaToken ? { "g-recaptcha-response": recaptchaToken } : {}),
+        }),
+      });
+
+      const data: ApiResponse = await response.json();
+
+      if (!response.ok || !data.success) {
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+
+        setSubmitState({
+          status: "error",
+          message: data.description || "Something went wrong. Please try again.",
+        });
+        resetRecaptcha();
+        return;
+      }
+
+      setSubmitState({
+        status: "success",
+        message: data.description || "Thank you! Your message has been submitted. We'll be in touch shortly.",
+      });
+      resetFields();
+      resetRecaptcha();
+    } catch {
+      resetFields();
+      resetRecaptcha();
+      setSubmitState({ status: "error", message: "Network error. Please check your connection and try again." });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <div className="form-container">
+        <h4>Get In Touch With Us</h4>
+
+        <form onSubmit={submitHandler} noValidate>
+          <div className="form-group">
+            <input type="text" placeholder="Full Name*" name="name" value={fieldsData.name} onChange={changeHandler} />
+            {getFieldError("name") ? <p className="field-error" role="alert">{getFieldError("name")}</p> : null}
+          </div>
+
+          <div className="form-group">
+            <input type="text" placeholder="Address" name="address" value={fieldsData.address} onChange={changeHandler} />
+            {getFieldError("address") ? <p className="field-error" role="alert">{getFieldError("address")}</p> : null}
+          </div>
+
+          <div className="form-group">
+            <input type="number" placeholder="Phone*" name="phone" value={fieldsData.phone} onChange={changeHandler} />
+            {getFieldError("phone") ? <p className="field-error" role="alert">{getFieldError("phone")}</p> : null}
+          </div>
+
+          <div className="form-group">
+            <input type="email" placeholder="Email*" name="email" value={fieldsData.email} onChange={changeHandler} />
+            {getFieldError("email") ? <p className="field-error" role="alert">{getFieldError("email")}</p> : null}
+          </div>
+
+          <div className="form-group">
+            <textarea id="exampleFormControlTextarea1" rows={5} placeholder="Message" name="description" value={fieldsData.description} onChange={changeHandler}></textarea>
+            {getFieldError("description") ? <p className="field-error" role="alert">{getFieldError("description")}</p> : null}
+          </div>
+
+          <div className="form-group">
+            <select name="type" value={fieldsData.type} onChange={changeHandler}>
+              <option value="admission">Admission</option>
+              <option value="feedback">Feedback</option>
+              <option value="enquiry">Enquiry</option>
+            </select>
+            {getFieldError("type") ? <p className="field-error" role="alert">{getFieldError("type")}</p> : null}
+          </div>
+
+          {RECAPTCHA_SITE_KEY ? (
+            <div className="form-group">
+              <RecaptchaField
+                key={recaptchaKey}
+                siteKey={RECAPTCHA_SITE_KEY}
+                onChange={(token) => {
+                  setRecaptchaToken(token);
+                  setErrors((prev) => {
+                    const next = { ...prev };
+                    delete next.recaptcha;
+                    return next;
+                  });
+                }}
+                onExpired={() => setRecaptchaToken(null)}
+              />
+              {getFieldError("recaptcha") ? <p className="field-error" role="alert">{getFieldError("recaptcha")}</p> : null}
+            </div>
+          ) : null}
+
+          <button className="btn" type="submit" disabled={isLoading}>
+            {isLoading ? "Submitting..." : "Submit"}
+          </button>
+
+          {submitState.status === "success" && (
+            <div className="form-feedback form-feedback--success" role="alert">
+              Thank you! Your details have been submitted successfully. Our admissions team will contact you shortly.
+            </div>
+          )}
+          {submitState.status === "error" && (
+            <div className="form-feedback form-feedback--error" role="alert">
+              {submitState.message}
+            </div>
+          )}
+
+        </form>
+      </div>
+
+    </>
+  );
+}

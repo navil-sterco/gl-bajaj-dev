@@ -1,0 +1,101 @@
+"use client"
+import { BASE_URL } from "@/src/config/config";
+import { apiFetch } from "@/src/lib/api";
+import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { SkeletonGroup } from "../ui/Skeleton";
+import NoData from "../ui/NoData";
+
+const fetchDepartmentActivitiesData = async (slug: string) => {
+  
+  const { data, error } = await apiFetch(`department-activities/${slug}`);
+  if (error) throw new Error(error);
+  return data;
+};
+
+export default function DepartmentHomeActivities({ pageName }: { pageName: string }) {
+  const pathname = usePathname();
+  const slug = pathname.split("/").filter(Boolean).pop() ?? "";
+  const { data, isLoading } = useQuery({
+    queryKey: ["department_home_activity", slug],
+    queryFn: () => fetchDepartmentActivitiesData(slug),
+  });
+
+  console.log('department home activyty ',data);
+
+  const activitiesData = data?.department_activities_news ?? [];
+
+  const slideCount = activitiesData.length;
+  const maxSlidesPerView = 3;
+  const shouldLoop = slideCount > maxSlidesPerView;
+  const showNavigation = shouldLoop;
+
+  if(isLoading){
+    return <SkeletonGroup count={3} wrapperClassName="!flex gap-[3rem]" className="w-full h-[30rem]" />
+  }
+
+  if(activitiesData.length == 0){
+    return <NoData />
+  }
+
+  return (
+    <Swiper
+      modules={[Navigation]}
+      slidesPerView={1.2}
+      spaceBetween={20}
+      loop={shouldLoop}
+      autoplay={false}
+      breakpoints={{
+        768: { slidesPerView: 2, spaceBetween: 15 },
+        1200: { slidesPerView: 4, spaceBetween: 30 },
+      }}
+      navigation={{
+        nextEl: ".department_activities_next",
+        prevEl: ".department_activities_prev",
+      }}
+      className="activities_swiper"
+    >
+      {activitiesData.map((item: any, idx: number) => (
+        <SwiperSlide key={item?.id || idx}>
+          <div className="activies_col">
+            <figure className="flash-effect-2">
+              <Image
+                src={item.image}
+                width={380}
+                height={275}
+                alt={item?.alt || pageName}
+               data-aos="fade-up" data-aos-delay="200"/>
+            </figure>
+            <div className="activities_caption">
+              <p  data-aos="fade-up" data-aos-delay="400">{item.heading || item.title}</p>
+            </div>
+            {(item?.pdf || item?.slug) && (
+              <Link
+                className="strech_link"
+                href={item?.pdf ? item.pdf : `${BASE_URL}happenings/news-events/${item.slug}`}
+                target={item?.pdf ? '_blank' : '_self'}
+              />
+            )}
+          </div>
+        </SwiperSlide>
+      ))}
+
+      {showNavigation && (
+        <div className="navigation_btn"  data-aos="fade-up" data-aos-delay="600"> 
+          <div className="prev-btn swiper_prev_custom department_activities_prev">
+            <img src="/images/icons/arrow.svg" alt="arrow" className="img-fluid" />
+          </div>
+          <div className="next-btn swiper_next_custom department_activities_next">
+            <img src="/images/icons/arrow.svg" alt="arrow" className="img-fluid" />
+          </div>
+        </div>
+      )}
+    </Swiper>
+  );
+}
