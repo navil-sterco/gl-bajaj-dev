@@ -2296,7 +2296,7 @@ section.table-description.project-gallery-top { padding-bottom: 0; }
 .vvdn_grid_01 { display: grid; grid-template-columns: 35% auto; margin-left: -1rem; }
 .vvdn_grid_01 .institutional-img { padding-left: 11rem; }
 .vvdn_grid { display: grid; grid-template-columns: 65% 39%; margin-top: 8rem; }
-.in_essence_section { padding-block: 10rem 5rem; border-bottom: 1px solid rgba(174, 127, 44, 0.5); }
+.in_essence_section { padding-block: 10rem 5rem; }
 .in_essence_section blockquote { padding-bottom: 3rem; }
 .in_essence_section figure { margin-block: 8rem; }
 .in_essence_section figure:empty{ display: none;}
@@ -2306,7 +2306,7 @@ section.table-description.project-gallery-top { padding-bottom: 0; }
 .objective_clubs ul{ padding-bottom: 3rem;}
 .clubs_table { padding-left: 3rem; }
 .objective_clubs h4 { margin-bottom: 4rem; }
-.navrang_club_section { padding:5rem 11.6rem ; }
+.navrang_club_section { padding:5rem 11.6rem ; border-top: 1px solid rgba(174, 127, 44, 0.5);}
 .navrang_list { padding-top: 5rem; }
 .navrang_club { padding-bottom: 4rem; }
 .navrang_list li:nth-child(even) { padding-left: 8rem; }
