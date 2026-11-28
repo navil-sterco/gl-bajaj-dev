@@ -1,0 +1,250 @@
+# GL Bajaj Institute of Technology and Management (GLBITM) — Authoritative Knowledge Base
+
+> This document is the verified institutional reference for G.L. Bajaj Institute of Technology and Management (GLBITM). It is compiled directly from official, approved institutional disclosures, statutory filings, published website records, and official Schema.org entity metadata. Each section provides its canonical source URL. All unverified statements and navigation furniture have been omitted.
+
+---
+
+## 1. Institutional Identity & Entity Metadata
+
+**Source:** [https://www.glbitm.org/about-us/about-glbitm/overview](https://www.glbitm.org/about-us/about-glbitm/overview) | [https://www.glbitm.org/#organization](https://www.glbitm.org/#organization)
+
+- **Official Name:** GL Bajaj Institute of Technology and Management
+- **Alternate Names:** GLBITM; G. L. Bajaj Institute of Technology and Management; GL Bajaj Institute of Technology & Management
+- **Year of Establishment:** 2005
+- **Sponsoring / Parent Organization:** **Institute of Dental and Medical Research Society**
+- **Founder:** Dr. Ram Kishore Agarwal
+- **Institutional Slogan:** *"Find Your Spark"*
+- **Campus Address:** Plot No. 2, APJ Abdul Kalam Road, Knowledge Park III, Greater Noida, Gautam Buddha Nagar, Uttar Pradesh 201306, India
+- **Geo Coordinates:** Latitude 28.47247092558961, Longitude 77.48909388650658 | [Google Maps Location](https://www.google.com/maps/place/GL+Bajaj+Institute+of+Technology+%26+Management/data=!4m2!3m1!1s0x0:0x8274cec5a1321578)
+- **Official Domain:** [https://www.glbitm.org/](https://www.glbitm.org/)
+
+### Statutory Identifiers & Regulatory Approvals
+- **AICTE Permanent ID:** 1-4863336
+- **AISHE Code:** C-46239
+- **AKTU College Code:** 192
+- **Approval Body:** Approved by the All India Council for Technical Education (AICTE), Ministry of Education, Government of India.
+  - [AICTE Extension of Approval (EOA 2025-26) Document](https://www.glbitm.org/assets/img/pages/407/section_1783402148_6a4c8ea43c4ee.pdf)
+- **Affiliating University:** Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow, Uttar Pradesh.
+- **Mandatory Disclosure:** [GLBITM AICTE Mandatory Disclosure Document](https://www.glbitm.org/assets/img/pages/184/section_1779345546_6a0ea88ac302d.pdf)
+
+### Accreditations, Ratings & Rankings
+**Source:** [https://www.glbitm.org/about-us/about-glbitm/ranking](https://www.glbitm.org/about-us/about-glbitm/ranking) | [https://www.glbitm.org/about-us/about-glbitm/affiliations-accreditations](https://www.glbitm.org/about-us/about-glbitm/affiliations-accreditations)
+- **NAAC Institutional Accreditation:**
+  - Grade: **NAAC A+** (First Cycle)
+  - Cumulative Grade Point Average: **CGPA 3.33 out of 4.00**
+  - Identification: `EC(SC)/178/1st Cycle/UPCOGN101456`
+  - Validity: **Valid up to 20 December 2028**
+  - [NAAC Accreditation Certificate](https://www.glbitm.org/assets/img/pages/24/section_1783063078_6a476226ae961.pdf)
+- **QS I-GAUGE Institutional Rating:**
+  - Overall Rating: **Diamond**
+  - Category Breakdown: Diamond in Teaching & Learning, Employability, Facilities, and Social Responsibility; Platinum in Governance and Entrepreneurship.
+  - [QS I-GAUGE Institutional Profile](https://www.igauge.in/institution/colleges/gl-bajaj-institute-of-technology-management)
+- **NIRF (National Institutional Ranking Framework):**
+  - Ranked in the Engineering Rank-Band 151–200 in official Ministry of Education rankings (e.g., Aug 2025, Aug 2024, Mar 2023).
+
+---
+
+## 2. Vision, Mission & Core Values
+
+**Source:** [https://www.glbitm.org/about-us/about-glbitm/overview](https://www.glbitm.org/about-us/about-glbitm/overview) 
+
+*(The following statements are the approved institutional wordings verbatim)*
+
+### Vision
+To be an institute of repute, providing globally competent and socially sensitive professionals.
+
+### Mission
+- To provide state-of-art infrastructure, processes, Centers of excellence and Human resources.
+- To inculcate qualities of leadership, professionalism, corporate understanding and executive competence.
+- To imbibe and enhance human values, ethics and morals amongst students.
+- To facilitate industry connects, provide skills to become globally competitive professionals.
+
+### Founding Inspiration
+**Source:** [https://www.glbitm.org/about-us/about-glbitm/our-inspiration](https://www.glbitm.org/about-us/about-glbitm/our-inspiration)  
+Founded in memory of **Late Shri Ganeshi Lalji Bajaj**, a freedom fighter and philanthropist who lived by the conviction that *"Education leads to enlightenment"*.
+
+---
+
+## 3. Leadership & Administration
+
+**Source:** [https://www.glbitm.org/about-us/governance/administrative-team](https://www.glbitm.org/about-us/governance/administrative-team) | [https://www.glbitm.org/about-us/visionary-messages](https://www.glbitm.org/about-us/visionary-messages)
+
+- **Last Verified:** 21 November 2026
+- **Founder & Chairman:** Dr. Ram Kishore Agarwal
+- **Vice Chairman:** Shri Pankaj Agarwal
+- **Managing Trustee:** Mrs. Anshu Agarwal
+- **Chief Executive Officer (CEO):** Mr. Kartikay Agarwal
+- **Director:** Dr. Manas Kumar Mishra
+- **Key Administrative Officers:**
+  - Registrar: Mr. Sunil Dutt
+  - Chief Administrative Officer: Mr. Aditya Saraswat
+  - Chief Operating Officer: Mr. Sanjeev Khandelwal
+  - Accounts Officer: Mr. KP Singh
+  - Deputy Registrar: Mr. Rajeev Sharma
+  - Librarian: Mr. Arun Kumar Biswal
+- **Corporate Advisory Board (CAB):** Industry talent heads and executives from leading organizations who provide strategic advisory for curriculum development and industry readiness.
+
+---
+
+## 4. Academic Programs & Departments
+
+**Source:** [https://www.glbitm.org/academics/departments](https://www.glbitm.org/academics/departments)
+
+### A. Undergraduate Degree Programs (B.Tech — 4-Year Full-Time)
+Degrees are awarded by Dr. A.P.J. Abdul Kalam Technical University (AKTU) in the following engineering branches:
+1. **B.Tech in Computer Science and Engineering (CSE)**
+2. **B.Tech in Computer Science and Engineering (Artificial Intelligence)**
+3. **B.Tech in Computer Science and Engineering (AI & Machine Learning)**
+4. **B.Tech in Computer Science and Engineering (Data Science)**
+5. **B.Tech in Computer Science & Information Technology (CSIT)**
+6. **B.Tech in Electrical and Computer Engineering**
+7. **B.Tech in Electronics and Communication Engineering (ECE)**
+8. **B.Tech in Mechanical Engineering (ME)**
+
+*(Teaching Role of Foundational Department)*:
+- **Department of Applied Science and Humanities:** Serves as a foundational academic department providing comprehensive first-year curriculum in Engineering Mathematics, Engineering Physics, Engineering Chemistry, Environmental Studies, and Professional English for undergraduate engineering students. It does not award a standalone degree.
+
+### B. Postgraduate Degree Programs
+1. **Master of Technology (M.Tech):** Advanced engineering postgraduate program affiliated with AKTU.
+2. **Master of Business Administration (MBA — 2-Year Full-Time):** Affiliated with AKTU. Offers management education with functional specializations including Marketing, Finance, Human Resource Management, Information Technology, Operations, and International Business.
+3. **Master of Computer Applications (MCA — 2-Year Full-Time):** Affiliated with AKTU. Emphasizes enterprise application development, cloud architectures, database design, and advanced computing.
+
+---
+
+## 5. Admissions Criteria, Process & Prospectus
+
+**Source:** [https://www.glbitm.org/admissions/overview](https://www.glbitm.org/admissions/overview) | [https://www.glbitm.org/admissions/admission-process](https://www.glbitm.org/admissions/admission-process)
+
+- **Prospectus Download:** Prospective candidates and counselors can access the official institutional brochure: [Download Official Prospectus](https://www.glbitm.org/admissions/prospectus)
+- **Undergraduate (B.Tech) Eligibility:**
+  - Passed 10+2 examination with Physics and Mathematics as compulsory subjects, plus one optional subject (Chemistry, Biotechnology, Biology, or Technical Vocational subject).
+  - Minimum percentage marks conform to AKTU/AICTE norms (historically 45% aggregate for General category, 40% for reserved categories).
+  - **Counselling Route:** Allocated through state **UPTAC counselling** based on **JEE Main** ranks.
+  - **Direct / Management Quota:** Admitted strictly in accordance with statutory guidelines and eligibility criteria prescribed by the State Government and AKTU.
+- **Postgraduate (MBA / MCA / M.Tech) Eligibility:**
+  - **MBA:** Recognized Bachelor's degree (minimum 3 years) with at least 50% aggregate marks (45% for reserved category). Admissions accepted via CUET-PG or merit guidelines.
+  - **MCA:** BCA, Bachelor's degree in Computer Science/Engineering or equivalent, or B.Sc./B.Com/B.A. with Mathematics at 10+2 or Graduation level with minimum 50% marks (45% for reserved category).
+  - **M.Tech:** Valid B.Tech/B.E. degree in the relevant discipline compliant with AKTU postgraduate admission regulations.
+- **Fee Refund Policy:**
+  **Source:** [https://www.glbitm.org/admissions/refund-policy](https://www.glbitm.org/admissions/refund-policy)  
+  Governed by statutory AICTE and UGC directives for candidate withdrawal prior to the formal cutoff date of each academic session.
+
+---
+
+## 6. Training, Placements & Career Development
+
+**Source:** [https://www.glbitm.org/placements/overview](https://www.glbitm.org/placements/overview) | [https://www.glbitm.org/placements/placement-record](https://www.glbitm.org/placements/placement-record)
+
+### Placement Metrics
+- **Median Salary:** As reported in official institutional statutory filings (such as NIRF Engineering Data Capture System - DCS submissions), the median annual compensation for graduating engineering batches has consistently ranged between **₹4.50 LPA and ₹5.00 LPA**.
+- **Average Package & Maximum Offers:** Published average compensation figures, top tier packages, and total offer numbers vary by graduating batch, individual program, and economic recruitment cycles. **₹7.35 LPA Average Package**. **₹58 LPA Highest Offer**
+- **Recruiting Partners:** Leading organizations participating in campus recruitment across recent sessions include Microsoft, Amazon, Cisco, Commvault, Capgemini, TCS, Wipro, Infosys, Cognizant, and Bosch.
+- *Verification Requirement:* Batch-specific salary distributions, verified average packages, and offer totals should be verified against the published annual Training & Placement Cell report for that specific graduating cohort.
+
+### Career Development Centre (CDC)
+**Source:** [https://www.glbitm.org/placements/career-development-centre](https://www.glbitm.org/placements/career-development-centre)  
+The CDC delivers structured student training across four academic years covering:
+- Quantitative aptitude and logical reasoning.
+- Technical programming fundamentals, data structures, and algorithms.
+- Professional communication, mock interviews, and group discussions.
+
+---
+
+## 7. Startup Incubation & Entrepreneurship through GLBITM/GLBCRI
+
+**Sources:** [GLBCRI Official Website](https://glbcri.org/) | [Incubation Support](https://glbcri.org/Incubation-Support.php) | [GLBITM Prospectus](https://www.glbitm.org/Uploads/section_1780393836_6a1ea76cc4357.pdf)
+
+GL Bajaj Center for Research and Incubation (GLBCRI) was established by GL Bajaj Institute of Technology and Management, Greater Noida, and operates as its incubation centre. It provides a pathway for students, innovators and entrepreneurs to develop ideas, build prototypes and establish startups alongside academic learning.
+
+GLBCRI supports founders through mentoring, workspace, incubation facilities, prototype-development resources, business guidance and access to funding networks.
+
+### AKTU Leader Incubator Award 2026
+
+**Source:** [AKTU Leader Incubator Award 2026](https://glbcri.org/Incubator-Award-2026.php)
+
+GLBCRI received the **AKTU Leader Incubator Award 2026** from **Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow**. The award announcement is dated **10 September 2026**.
+
+### Incubation Achievements
+
+| Achievement | Result |
+| --- | --- |
+| Startups incubated through  GLBITM/GLBCRI | **140 startups** |
+| Combined valuation of startups incubated through  GLBITM/GLBCRI | **₹500 crore** |
+| Grant/support funding received by  GLBITM/GLBCRI for entrepreneurship promotion | **₹10 crore** |
+
+The ₹500 crore figure represents the combined valuation of the incubated startups. The ₹10 crore figure represents grant/support funding received for entrepreneurship promotion.
+
+### Prototype Development and Startup Support
+
+- **Mentoring and business guidance:** Support for developing business ideas, business plans and routes to market.
+- **Workspace and prototyping:** Access to incubation facilities and resources for developing and testing ideas.
+- **Funding networks:** Connections to relevant funding opportunities and support programs.
+- **DST NIDHI-PRAYAS:** [Program details](https://glbcri.org/Nidhi-Prayas.php) for prototype-development support, eligibility and applications.
+- **Start in UP:** [Policy and program information](https://glbcri.org/Start-in-UP.php) about startup support under the Uttar Pradesh startup policy.
+
+Participation and funding depend on the eligibility and selection process of the relevant program.
+
+---
+
+## 8. Research, Innovation & Campus Facilities
+
+**Source:** [https://www.glbitm.org/research-innovation/overview](https://www.glbitm.org/research-innovation/overview) | [https://www.glbitm.org/facilities/academic](https://www.glbitm.org/facilities/academic)
+
+- **Institution's Innovation Council (IIC):** Established under the Ministry of Education's Innovation Cell (MIC) to foster student ideation, startup culture, and hackathon participation.
+- **Centres of Excellence & Laboratories:** Specialized laboratories support domain training in Artificial Intelligence, Internet of Things (IoT), and Robotics.
+- **Intellectual Property:** Research initiatives result in published and filed patents through the institute's IPR cell.
+- **Campus Amenities:**
+  - **Academic:** Air-conditioned lecture rooms with audio-visual equipment, computing labs, and Central Library with extensive print volumes and digital consortia subscriptions.
+  - **Campus & Residential:** Dedicated on-campus hostels for boys and girls, sports courts, cafeteria, and medical room.
+  - **Fleet Transport:** Bus services operating across designated routes in Noida, Greater Noida, Ghaziabad, and Delhi-NCR.
+
+### Research Achievements
+
+**Sources:** [Research Publications](https://www.glbitm.org/research-innovation/publications) | [Patents & IPR](https://www.glbitm.org/research-innovation/ipr-patents) | [GLBITM Prospectus](https://www.glbitm.org/Uploads/section_1780393836_6a1ea76cc4357.pdf)
+
+| Research Achievement | Result |
+| --- | --- |
+| Papers published in SCI/Scopus | **2,500** |
+| Citations in Scopus | **23,000** |
+| Scopus h-index | **60** |
+| Patents published | **776** |
+| Patents granted | **18** |
+
+
+---
+
+## 9. Quality Assurance & Mandatory Compliance
+
+**Source:** [https://www.glbitm.org/quality-initiatives/iqac](https://www.glbitm.org/quality-initiatives/iqac) | [https://www.glbitm.org/mandatory-disclosure](https://www.glbitm.org/mandatory-disclosure)
+
+- **Internal Quality Assurance Cell (IQAC):** Conducts internal academic audits, monitors outcome-based education (OBE) metrics, and compiles Annual Quality Assurance Reports (AQAR).
+- **Anti-Ragging Committee:** Operates in strict compliance with AICTE/UGC statutory regulations with a zero-tolerance mandate.
+- **Grievance Redressal Committee:** Maintained pursuant to statutory guidelines to address concerns from students, staff, and parents.
+- **Mandatory Disclosures:** Published pursuant to AICTE regulations covering infrastructure, faculty list, fee structure, and academic facilities.
+
+---
+
+## 10. Official Institutional Contacts Directory
+
+**Source:** [https://www.glbitm.org/contact-us](https://www.glbitm.org/contact-us)
+
+- **Campus Location:** Plot No. 2, APJ Abdul Kalam Road, Knowledge Park III, Greater Noida, Uttar Pradesh 201306, India
+- **Geo Coordinates:** Latitude 28.47247092558961, Longitude 77.48909388650658
+- **Google Maps:** [https://www.google.com/maps/place/GL+Bajaj+Institute+of+Technology+%26+Management/data=!4m2!3m1!1s0x0:0x8274cec5a1321578](https://www.google.com/maps/place/GL+Bajaj+Institute+of+Technology+%26+Management/data=!4m2!3m1!1s0x0:0x8274cec5a1321578)
+
+### Departmental Contact Matrix
+| Function / Desk | Telephone Numbers | Email Address |
+| :--- | :--- | :--- |
+| **General Enquiries / Office** | +91-7290008310<br>+91-7290008390<br>+91-8010000234 (Toll-Free: 8010-000-234) | `office@glbitm.ac.in` |
+| **Admissions Office** | +91-8750720005<br>+91-8750610005<br>+91-8750730005<br>+91-8750620005<br>+91-7835005123 | `admissions@glbitm.ac.in` |
+| **Accounts & Fee Enquiries** | Office Desk Extension via General Lines | `accounts@glbitm.ac.in` |
+| **Careers & Faculty Hiring** | HR Desk Extension via General Lines | `careers@glbitm.ac.in` |
+
+### Official Social Media Handles
+- **Facebook:** [https://www.facebook.com/glbitm](https://www.facebook.com/glbitm)
+- **Twitter / X:** [https://x.com/glbajaj](https://x.com/glbajaj)
+- **YouTube:** [https://www.youtube.com/user/glbitm07](https://www.youtube.com/user/glbitm07)
+- **Instagram:** [https://www.instagram.com/glbajajitm/](https://www.instagram.com/glbajajitm/)
+- **LinkedIn:** [https://www.linkedin.com/school/g-l-bajaj-institute-of-technology-and-management/](https://www.linkedin.com/school/g-l-bajaj-institute-of-technology-and-management/)
+- **Tumblr:** [https://www.tumblr.com/glbajajitm](https://www.tumblr.com/glbajajitm)
+- **Pinterest:** [https://in.pinterest.com/glbajaj/](https://in.pinterest.com/glbajaj/)
