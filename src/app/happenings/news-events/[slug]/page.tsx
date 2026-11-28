@@ -20,21 +20,29 @@ export async function generateMetadata({
     return getPageSEO(`happenings/news-events/${slug}`);
 }
 
-export default async function NewsDetailPage({params, searchParams}:{params:Promise<{slug:string}>; searchParams:Promise<{department?:string}>}){
+export default async function NewsDetailPage({params, searchParams}:{params:Promise<{slug:string}>; searchParams:Promise<{department?:string; search?:string}>}){
     const {slug} = await params;
 
     if (isNumeric(slug)) {
-        const { department } = await searchParams;
+        const { department, search } = await searchParams;
         const page = Number(slug);
         if (page < 1) notFound();
         if (page === 1) {
+          const params = new URLSearchParams();
+          if (department) params.set("department", department);
+          if (search) params.set("search", search);
+          const query = params.toString();
           permanentRedirect(
-            department
-              ? `/happenings/news-events?department=${encodeURIComponent(department)}`
-              : "/happenings/news-events"
+            query ? `/happenings/news-events?${query}` : "/happenings/news-events"
           );
         }
-        return <NewsEventsListing page={page} department={department || ""} />;
+        return (
+          <NewsEventsListing
+            page={page}
+            department={department || ""}
+            search={search || ""}
+          />
+        );
     }
 
     const currentSlug = 'news-events';

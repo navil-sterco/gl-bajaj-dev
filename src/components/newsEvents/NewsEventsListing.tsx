@@ -17,13 +17,16 @@ import "@/src/styles/parser.css";
 export default async function NewsEventsListing({
   page,
   department = "",
+  search = "",
 }: {
   page: number;
   department?: string;
+  search?: string;
 }) {
   const query = new URLSearchParams({
     page: String(page),
     ...(department && { department }),
+    ...(search && { search }),
   }).toString();
 
   const [{ data, error }, { data: deptData }, seoData] = await Promise.all([
@@ -84,6 +87,7 @@ export default async function NewsEventsListing({
           slug={slug}
           departments={departments}
           currentDepartment={department}
+          currentSearch={search}
         />
         {otherListing.length > 0 && (
           <NewsListing data={otherListing} slug={slug} />

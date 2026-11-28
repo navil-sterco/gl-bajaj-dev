@@ -8,6 +8,7 @@ export async function generateMetadata() {
 interface SearchParams {
   page?: string;
   department?: string;
+  search?: string;
 }
 
 export default async function NewsEvent({
@@ -15,7 +16,13 @@ export default async function NewsEvent({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  const { department } = await searchParams;
+  const { department, search } = await searchParams;
 
-  return <NewsEventsListing page={1} department={department || ""} />;
+  return (
+    <NewsEventsListing
+      page={1}
+      department={department || ""}
+      search={search || ""}
+    />
+  );
 }

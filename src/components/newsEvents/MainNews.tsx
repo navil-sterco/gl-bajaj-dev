@@ -3,15 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import NoData from "../ui/NoData";
 import DepartmentFilter from "./DepartmentFilter";
+import NewsSearch from "./NewsSearch";
 
 interface Props {
   data: any;
   slug: string;
   departments: { name: string; slug: string }[];
   currentDepartment: string;
+  currentSearch: string;
 }
 
-export default function MainNews({ data, slug, departments, currentDepartment }: Props) {
+export default function MainNews({
+  data,
+  slug,
+  departments,
+  currentDepartment,
+  currentSearch,
+}: Props) {
   if (!data) {
     return (
       <section className="news_section">
@@ -21,6 +29,10 @@ export default function MainNews({ data, slug, departments, currentDepartment }:
               <DepartmentFilter
                 departments={departments}
                 currentDepartment={currentDepartment}
+                basePath="/happenings/news-events"
+              />
+              <NewsSearch
+                currentSearch={currentSearch}
                 basePath="/happenings/news-events"
               />
             </div>
@@ -56,6 +68,10 @@ export default function MainNews({ data, slug, departments, currentDepartment }:
                 <DepartmentFilter
                   departments={departments}
                   currentDepartment={currentDepartment}
+                  basePath="/happenings/news-events"
+                />
+                <NewsSearch
+                  currentSearch={currentSearch}
                   basePath="/happenings/news-events"
                 />
               </div>
