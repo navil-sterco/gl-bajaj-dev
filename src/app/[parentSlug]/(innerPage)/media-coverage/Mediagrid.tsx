@@ -1,14 +1,18 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import Image from "next/image";
+import AOS from "aos";
 
 interface MediaItem {
+    id?: number;
     image?: string | null;
     date?: string | null;
     title?: string | null;
-    alt?:string;
+    alt?: string;
+    slug?: string;
 }
 
 interface MediaYearGroup {
@@ -17,6 +21,20 @@ interface MediaYearGroup {
 }
 
 export default function MediaGrid({ items, pageName }: { items: MediaYearGroup[]; pageName:string; }) {
+    const sortedGroups = useMemo(
+        () => [...items].sort((a, b) => b.year - a.year),
+        [items]
+    );
+    const years = sortedGroups.map(({ year }) => String(year));
+    const [selectedYear, setSelectedYear] = useState(years[0] ?? "");
+    const activeGroup = sortedGroups.find(
+        ({ year }) => String(year) === selectedYear
+    );
+
+    useEffect(() => {
+        AOS.refreshHard();
+    }, [selectedYear]);
+
     const renderItems = (yearItems: MediaItem[]) => {
         const openGallery = (index: number) => {
             if (typeof Fancybox === "undefined") return;
@@ -73,14 +91,26 @@ export default function MediaGrid({ items, pageName }: { items: MediaYearGroup[]
         );
     };
 
+    if (!sortedGroups.length) return null;
+
     return (
-        <>
-            {items.map(({ year, items: yearItems }) => (
-                <section key={year} className="media_coverage_year">
-                    <h4 className="title24">{year}</h4>
-                    {renderItems(yearItems)}
-                </section>
-            ))}
-        </>
+        <section className="media_coverage_year" key={selectedYear}>
+            <div className="media_coverage_year_head">
+                <h4 className="title24">{activeGroup?.year}</h4>
+                <select
+                    className="placement_select"
+                    value={selectedYear}
+                    onChange={(event) => setSelectedYear(event.target.value)}
+                    aria-label="Select media coverage year"
+                >
+                    {years.map((year) => (
+                        <option key={year} value={year}>
+                            {year}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            {activeGroup && renderItems(activeGroup.items)}
+        </section>
     );
 }
