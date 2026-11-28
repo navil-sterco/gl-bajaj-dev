@@ -1,8 +1,10 @@
 "use client"
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BASE_URL } from "@/src/config/config";
 import { usePathname } from "next/navigation";
+import AOS from "aos";
 
 type AlumniEvent = {
   id: number;
@@ -28,8 +30,20 @@ export default function AlumniEventsMeetGrid({ pageName, data }: { pageName: str
   const parentSlug = slug[0]
   const childSlug = slug[1];
 
-  const alumniEvents = data?.alumni_events ?? [];
+  const alumniEvents = useMemo(
+    () => [...(data?.alumni_events ?? [])].sort((a, b) => b.year - a.year),
+    [data?.alumni_events]
+  );
   const undatedEvents = data?.undated_events ?? [];
+  const years = alumniEvents.map(({ year }) => String(year));
+  const [selectedYear, setSelectedYear] = useState(years[0] ?? "");
+  const activeYear = alumniEvents.find(
+    ({ year }) => String(year) === selectedYear
+  );
+
+  useEffect(() => {
+    AOS.refreshHard();
+  }, [selectedYear]);
 
   const renderEvents = (events: AlumniEvent[]) => (
     <div className="award-list">
@@ -57,20 +71,41 @@ export default function AlumniEventsMeetGrid({ pageName, data }: { pageName: str
 
   return (
     <>
-      <>
-        {alumniEvents.map(({ year, events }) => (
-          <section key={year} className="alumni-events-year">
-            <h4 className="font24">{year}</h4>
-            {renderEvents(events)}
-          </section>
-        ))}
-        {undatedEvents.length > 0 && (
-          <section className="alumni-events-undated">
-            <h4 className="font24">Other Events</h4>
-            {renderEvents(undatedEvents)}
-          </section>
-        )}
-      </>
+      {activeYear && (
+        <section className="alumni-events-year" key={selectedYear}>
+          <div
+            className="placement_head"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "16px",
+              flexWrap: "wrap",
+            }}
+          >
+            <h4 className="font24">{activeYear.year}</h4>
+            <select
+              className="placement_select"
+              value={selectedYear}
+              onChange={(event) => setSelectedYear(event.target.value)}
+              aria-label="Select event year"
+            >
+              {years.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+          </div>
+          {renderEvents(activeYear.events)}
+        </section>
+      )}
+      {undatedEvents.length > 0 && (
+        <section className="alumni-events-undated">
+          <h4 className="font24">Other Events</h4>
+          {renderEvents(undatedEvents)}
+        </section>
+      )}
     </>
   );
 }

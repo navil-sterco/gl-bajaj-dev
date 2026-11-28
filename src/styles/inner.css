@@ -75,7 +75,7 @@
 .admissions-prospectus-page .pdf_iframe{padding:12rem 0 ;}
 .pdf_iframe iframe{height: 100rem;}
 
-.guest_grid{display:grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;}
+.guest_grid{display:grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;}
 .student-corner-clubs-anvitha-club-page .in_essence_section{padding-top:0;}
 .student-corner-clubs-anvitha-club-page .in_essence_section .flash-effect-2{margin-top:0;}
 
@@ -263,10 +263,14 @@
 .news_section { padding-block: 10rem 4rem; background-color: var(--color-F4); }
 .front_news { display: grid; grid-template-columns: 57% auto; gap: 15rem; }
 .award_ranking_why .front_news { gap: 15rem; }
-.news_head { display: flex; justify-content: flex-end; }
+.news_head { display: flex; justify-content: flex-end; align-items: center; gap: 1.5rem;}
 .news_head .form-select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: url("/images/icons/arrow-down.webp"); /* your custom icon */
-    background-repeat: no-repeat; background-position: right 1.5rem center; background-size: 1.3rem; padding-right: 4rem; height: 4.6rem; padding-inline: 1.5rem; font: var(--font-16); color: var(--color-black); border: 1px solid #e1e1e1; min-width: 35rem; box-shadow: none; outline: none; }
+    background-repeat: no-repeat; background-position: right 1.5rem center; background-size: 1.3rem; padding-right: 4rem; height: 4.6rem; padding-inline: 1.5rem; font: var(--font-16); color: var(--color-black); border: 1px solid #e1e1e1; min-width: 35rem; box-shadow: none; outline: none; max-width: 30rem;}
+.news_search { position: relative; }
+.news_search input { height: 4.6rem; min-width: 13rem; padding: 0 4.5rem 0 1.5rem; font: var(--font-16); color: var(--color-black); border: 1px solid #e1e1e1; outline: none; max-width: 20rem;}
+.news_search img { position: absolute; right: 1.5rem; top: 50%; width: 1.8rem; height: 1.8rem; transform: translateY(-50%); pointer-events: none; }
 .news_right { display: flex; flex-direction: column; justify-content: space-between; padding-inline: 1rem; }
+.news_right .news_content_outer{height: 100%; display: grid; align-items: center;}
 .news_right date { font: var(--font-16); color: var(--color-33); }
 .news_right h3 { color: var(--color-64); font: var(--font-24); font-weight: 700; padding-block: 3rem; }
 .news_right p { font: var(--font-16); color: var(--color-33); }
@@ -340,8 +344,9 @@
 .media_grid_Bx { background-color: var(--color-F5); padding: 2rem 2rem 3rem; }
 .media_grid_Bx figure { background-color: var(--color-fa); margin: -5rem auto 0; text-align: center; height: 26.3rem; overflow:hidden;}
 .media_grid_Bx figure img{ object-position: top; height: 100%; object-fit: cover;}
-.media_coverage .title24{margin-bottom:6rem;}
+/* .media_coverage .title24{margin-bottom:6rem;} */
 .media_coverage .media_coverage_year{margin-bottom:6rem;}
+.media_coverage .media_coverage_year_head{margin-bottom: 8rem;}
 /* .media_grid_Bx figure img { max-width: 22rem; margin: 0 auto; }
 */
 
@@ -2131,7 +2136,8 @@ section.facilities_policy.iqac-event.institutional-distinctiveness { padding-bot
 .our_recruiters .our_recruiters-grid li:hover img { transform: scale(1.08); }
 .placement_main { padding-block: 8rem 10rem; }
 .placement_main .row { margin: 0; }
-.placement_main .placement_select{padding: 1rem 2rem 1rem 1rem; font:var(--font-14); border: 1px solid #ccc; background: #fff; cursor: pointer; min-width: 140px;}
+.placement_main .placement_select, .award-sec.alumni_event .placement_select, .media_coverage .placement_select{padding: 1rem 2rem 1rem 1rem; font:var(--font-14); border: 1px solid #ccc; background: #fff; cursor: pointer; min-width: 140px;}
+.media_coverage_year_head { display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; flex-wrap: wrap; margin-bottom: 3rem; }
 .placement_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem; }
 .place_box { background-color: #f3e9dced; margin-top: 3rem;}
 .place_infobox h3 { font: var(--font-24); color: #633d27; margin-bottom: 1.5rem; font-weight: bold; }
@@ -2745,6 +2751,7 @@ section.table-description.project-gallery-top { padding-bottom: 0; }
 .ev_den_wrp::before { background-color: var(--color-F4); content: ''; width: 84%; height: 100%; position: absolute; top: 0; bottom: 0; margin: 0 auto; left: 0; right: 0; }
 .ev_den_grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; position: relative; padding-block: 8rem 8rem; }
 .ev_den_rgttext { padding: 9rem  12rem  0 23rem ; }
+.ev_den_grid .ev_den_rgttext{padding-top:0;}
 .ev_den_rgttext >h4 { margin-bottom: 4rem; }
 .ev_den_rgttext .best_pra_pdf { margin-top:5rem; }
 .the_prac_indus { padding-block: 8rem 8rem; }

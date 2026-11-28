@@ -15,9 +15,16 @@ export default function DepartmentFilter({ departments, currentDepartment, baseP
 
   const handleChange = (value: string) => {
     if(basePath){
-      return router.push(
-        value ? `${basePath}?department=${encodeURIComponent(value)}` : basePath
-      );
+      const params = new URLSearchParams(searchParams.toString());
+      if (value) {
+        params.set("department", value);
+      } else {
+        params.delete("department");
+      }
+      params.delete("page");
+      const query = params.toString();
+      window.dispatchEvent(new Event("navigation-start"));
+      return router.push(query ? `${basePath}?${query}` : basePath);
     }else{
       const params = new URLSearchParams(searchParams.toString());
       if (value) {
@@ -26,6 +33,7 @@ export default function DepartmentFilter({ departments, currentDepartment, baseP
         params.delete("department");
       }
       params.delete("page"); 
+      window.dispatchEvent(new Event("navigation-start"));
       router.push(`${pathname}?${params.toString()}`);
     }
     

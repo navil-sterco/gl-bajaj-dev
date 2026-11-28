@@ -8,6 +8,7 @@ import { buildGlobalSchema } from "@/src/lib/schema/globalSchema";
 import { BASE_URL } from "@/src/config/config";
 import { buildHomepageSchema } from "@/src/lib/schema/homepageSchema";
 import getValue from "@/src/lib/getValue";
+import { buildCollegeOrUniversitySchema } from "@/src/lib/schema/collegeOrUniversitySchema";
 
 export async function generateMetadata() {
   return await getPageSEO(`about-us/about-glbitm/overview`);
@@ -112,6 +113,8 @@ export default async function AboutOverviewPage({
       ]
     }
 
+    const collegeOrUniversitySchema = buildCollegeOrUniversitySchema();
+
   return (
     <>
       {seoData?.schema && (
@@ -126,6 +129,12 @@ export default async function AboutOverviewPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+        />
+      )}
+      {collegeOrUniversitySchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collegeOrUniversitySchema) }}
         />
       )}
       {eventSchema && (

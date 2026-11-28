@@ -643,7 +643,10 @@
 .news_section{ padding-block: 5rem;}
 .news_left img{ width: 100%;}
 .news_right{ padding-top: 5rem;}
-.news_head{ justify-content: flex-start; padding-bottom: 3rem;}
+.news_head{ justify-content: flex-start; padding-bottom: 3rem; display:block;}
+.news_head .form-select{min-width: auto; width: 100%; max-width: fit-content;}
+.news_search{margin-top:1rem;}
+.news_search input{min-width: auto; max-width: fit-content; width: 100%; max-width: 100%;}
 .news_right{ padding-inline: 0;}
 .front_news .news_cnt a{ margin-left: 0.2rem;}
 .news_right h3{ padding-block: 0rem 2rem;}

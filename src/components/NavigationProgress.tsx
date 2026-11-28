@@ -42,9 +42,17 @@ export function NavigationProgress() {
       timeoutRef.current = setTimeout(() => setLoading(false), 10000)
     }
 
+    const handleNavigationStart = () => {
+      setLoading(true)
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+      timeoutRef.current = setTimeout(() => setLoading(false), 10000)
+    }
+
     document.addEventListener('click', handleClick)
+    window.addEventListener('navigation-start', handleNavigationStart)
     return () => {
       document.removeEventListener('click', handleClick)
+      window.removeEventListener('navigation-start', handleNavigationStart)
       if (timeoutRef.current) clearTimeout(timeoutRef.current)
     }
   }, [])

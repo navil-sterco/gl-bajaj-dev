@@ -1,13 +1,14 @@
 import FullImageBanner from "../components/common/fullImageBanner/FullImageBanner";
 import { getPageSEO } from "../lib/seo";
 import { apiFetch } from "../lib/api";
-import { cache, Suspense } from "react";
+import { cache } from "react";
 // import { SkeletonGroup } from "../components/ui/Skeleton";
 import HomeContent from "./HomeContent";
 import NotificationBar from "../components/ui/notificationBar/NotificationBar";
 import { buildHomepageSchema } from "../lib/schema/homepageSchema";
 import getValue from "../lib/getValue";
 import { BASE_URL } from "../config/config";
+import { buildCollegeOrUniversitySchema } from "../lib/schema/collegeOrUniversitySchema";
 import { buildGlobalSchema } from "../lib/schema/globalSchema";
 
 const getHomeData = cache(async () => {
@@ -16,7 +17,7 @@ const getHomeData = cache(async () => {
     apiFetch("modular/home"),
     apiFetch("info"),
   ]);
-  return { seoData, homeData: homeRes?.data?.data, infoRes:infoRes?.data };
+  return { seoData, homeData: homeRes?.data?.data, infoRes: infoRes?.data };
 });
     
 export async function generateMetadata() {
@@ -33,39 +34,39 @@ export default async function Home() {
     </div>
   }
 
-  const schemaArgs = {
-    officialFacebookUrl:getValue(infoRes, 'facebook')?.value,
-    officialInstagramUrl:getValue(infoRes, 'instagram')?.value,
-    officialLinkedinUrl:getValue(infoRes, 'linkedin')?.value,
-    officialYoutubeUrl:getValue(infoRes, 'youtube')?.value,
-    officialXUrl:getValue(infoRes, 'twitter')?.value,
-    officialInstitutionName:getValue(infoRes, 'institute_name')?.value,
-    commonNameOrAcronym:getValue(infoRes, 'institute_name')?.value,
-    legalName:getValue(infoRes, 'institute_name')?.value,
-    approvedInstitutionDescription:seoData.description || '',
-    logoUrl:`${BASE_URL}images/logo/logo.png`,
-    logoWidthPx:415,
-    logoHeightPx:112,
-    representativeCampusImageUrl:``,
-    streetAddress:getValue(infoRes, 'street_address')?.value,
-    cityLocality:getValue(infoRes, 'locality_address')?.value,
-    state:getValue(infoRes, 'region_address')?.value,
-    pinCode:getValue(infoRes, 'postal_code')?.value,
-    latitude:getValue(infoRes, 'latitude')?.value,
-    longitude:getValue(infoRes, 'longitude')?.value,
-    primaryPhoneWithCountryCode:getValue(infoRes, 'phone')?.value,
-    primaryEmail:getValue(infoRes, 'email')?.value,
-    admissionsPhone:getValue(infoRes, 'admission_helpline')?.value,
-    admissionsEmail:getValue(infoRes, 'email')?.value,
-    generalPhone:getValue(infoRes, 'phone')?.value,
-    generalEmail:getValue(infoRes, 'email')?.value,
-    foundingDateOrYear:'',
-    identifierAuthority:"",
-    identifierValue:"",
-    websiteName:"GL Bajaj",
-    websiteAlternateName:"GL Bajaj",
-    defaultLanguage:"en",
-  }
+  const homepageSchemaArgs = {
+    officialFacebookUrl: getValue(infoRes, 'facebook')?.value,
+    officialInstagramUrl: getValue(infoRes, 'instagram')?.value,
+    officialLinkedinUrl: getValue(infoRes, 'linkedin')?.value,
+    officialYoutubeUrl: getValue(infoRes, 'youtube')?.value,
+    officialXUrl: getValue(infoRes, 'twitter')?.value,
+    officialInstitutionName: getValue(infoRes, 'institute_name')?.value,
+    commonNameOrAcronym: getValue(infoRes, 'institute_name')?.value,
+    legalName: getValue(infoRes, 'institute_name')?.value,
+    approvedInstitutionDescription: seoData.description || '',
+    logoUrl: `${BASE_URL}images/logo/logo.png`,
+    logoWidthPx: 415,
+    logoHeightPx: 112,
+    representativeCampusImageUrl: '',
+    streetAddress: getValue(infoRes, 'street_address')?.value,
+    cityLocality: getValue(infoRes, 'locality_address')?.value,
+    state: getValue(infoRes, 'region_address')?.value,
+    pinCode: getValue(infoRes, 'postal_code')?.value,
+    latitude: getValue(infoRes, 'latitude')?.value,
+    longitude: getValue(infoRes, 'longitude')?.value,
+    primaryPhoneWithCountryCode: getValue(infoRes, 'phone')?.value,
+    primaryEmail: getValue(infoRes, 'email')?.value,
+    admissionsPhone: getValue(infoRes, 'admission_helpline')?.value,
+    admissionsEmail: getValue(infoRes, 'email')?.value,
+    generalPhone: getValue(infoRes, 'phone')?.value,
+    generalEmail: getValue(infoRes, 'email')?.value,
+    foundingDateOrYear: '',
+    identifierAuthority: '',
+    identifierValue: '',
+    websiteName: 'GL Bajaj',
+    websiteAlternateName: 'GL Bajaj',
+    defaultLanguage: 'en',
+  };
 
   const globalSchemaArgs = {
     canonicalUrl:seoData?.alternates?.canonical || BASE_URL || '',
@@ -79,7 +80,8 @@ export default async function Home() {
     currentPageName:homeData?.page_title || ''
   };
 
-  const pageSchema = buildHomepageSchema(schemaArgs);
+  const homepageSchema = buildHomepageSchema(homepageSchemaArgs);
+  const collegeOrUniversitySchema = buildCollegeOrUniversitySchema();
   const globalSchema = buildGlobalSchema(globalSchemaArgs);
 
   return (
@@ -98,10 +100,16 @@ export default async function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
         />
       )}
-      {pageSchema && (
+      {collegeOrUniversitySchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collegeOrUniversitySchema) }}
+        />
+      )}
+      {homepageSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
         />
       )}
       <main>
