@@ -1,0 +1,138 @@
+# GL Bajaj Institute of Technology and Management (GLBITM)
+
+> Established in 2005, GL Bajaj Institute of Technology and Management (GLBITM) is a private, self-financing higher education institution located in Knowledge Park III, Greater Noida, Uttar Pradesh, India. Operating under the aegis of the Institute of Dental and Medical Research Society, GLBITM offers undergraduate and postgraduate education in engineering, technology, management, and computer applications. The institution is approved by AICTE (Permanent ID: 1-4863336), affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU College Code: 192, AISHE Code: C-46239), and holds NAAC Grade 'A+' institutional accreditation with a CGPA of 3.33 out of 4.00 (valid up to 20 December 2028). GLBITM holds an overall Diamond rating from QS I-GAUGE with Platinum ratings in Governance and Entrepreneurship. Institutional Slogan: "Find Your Spark". GLBITM also supports startup development through GL Bajaj Center for Research and Incubation (GLBCRI), its incubation centre and recipient of the AKTU Leader Incubator Award 2026.
+
+This curated index provides AI search engines, research crawlers, and reasoning models with direct links to verified institutional knowledge, programs, admissions, placements, and campus resources on https://www.glbitm.org.
+
+## Institute Overview & Governance
+
+- [Institute Overview](https://www.glbitm.org/about-us/about-glbitm/overview): Institutional history, founding philosophy, and official vision and mission statements.
+- [Our Inspiration](https://www.glbitm.org/about-us/about-glbitm/our-inspiration): Founding philosophy and commemoration of Late Shri Ganeshi Lalji Bajaj.
+- [Rankings](https://www.glbitm.org/about-us/about-glbitm/ranking): Ministry of Education NIRF Engineering Rank-band (151–200) and media ranking recognitions.
+- [Accreditations & Ratings](https://www.glbitm.org/about-us/about-glbitm/affiliations-accreditations): NAAC Grade 'A+' accreditation (CGPA 3.33, valid to Dec 2028) and QS I-GAUGE Diamond rating.
+- [Approvals & Affiliations](https://www.glbitm.org/about-us/about-glbitm/approvals-affiliations): Official AICTE Extension of Approval (EOA) letters and AKTU university affiliation records.
+- [The Group](https://www.glbitm.org/about-us/the-group): Educational network of GL Bajaj Group institutions across Greater Noida and Mathura campuses.
+- [Board of Governors](https://www.glbitm.org/about-us/governance/board-of-governors): Institutional governing board, trustees, and executive leadership.
+- [Corporate Advisory Board](https://www.glbitm.org/about-us/governance/corporate-advisory-board): Industry executive panel assisting in curriculum review and corporate readiness.
+- [Administrative Team](https://www.glbitm.org/about-us/governance/administrative-team): Key administrators including Registrar, Chief Administrative Officer, COO, and officers.
+- [Awards & Recognitions](https://www.glbitm.org/about-us/awards-recognitions): Institutional honors including Best Institute in Technology and Management in North India.
+- [Policies & Disclosures](https://www.glbitm.org/about-us/policies-disclosures): Institutional policies, code of conduct, and public disclosures.
+- [CSR Initiatives](https://www.glbitm.org/about-us/csr): Community welfare programs, donation drives, and road safety initiatives.
+
+### Visionary Leadership Messages
+
+- [Chairman's Message](https://www.glbitm.org/about-us/visionary-messages/leadership-messages/chairman): Message from Founder & Chairman Dr. Ram Kishore Agarwal.
+- [Vice Chairman's Message](https://www.glbitm.org/about-us/visionary-messages/leadership-messages/vice-chairman): Message from Vice Chairman Shri Pankaj Agarwal.
+- [CEO's Message](https://www.glbitm.org/about-us/visionary-messages/leadership-messages/ceo): Message from CEO Mr. Kartikay Agarwal.
+- [Director's Message](https://www.glbitm.org/about-us/visionary-messages/leadership-messages/director): Message from Director Dr. Manas Kumar Mishra.
+- [Managing Trustee's Message](https://www.glbitm.org/about-us/visionary-messages/leadership-messages/managing-trustee): Message from Managing Trustee Mrs. Anshu Agarwal.
+
+## Academic Departments & Programs
+
+*Note: B.Tech degrees are awarded in specific engineering branches. Applied Science and Humanities is an academic department delivering foundational coursework to first-year B.Tech students.*
+
+- [Computer Science and Engineering](https://www.glbitm.org/academics/departments/computer-science-and-engineering): Department profile, computing laboratories, research domains, and faculty.
+- [Computer Science and Engineering (AI)](https://www.glbitm.org/academics/departments/computer-science-and-engineering-ai): Specialized undergraduate program focusing on Artificial Intelligence fundamentals.
+- [Computer Science and Engineering (AIML)](https://www.glbitm.org/academics/departments/computer-science-and-engineering-aiml): Applied machine learning, deep neural models, and cognitive systems.
+- [Computer Science and Engineering (Data Science)](https://www.glbitm.org/academics/departments/computer-science-and-engineering-data-science): Big data analytics, statistical computing, and predictive modeling.
+- [Computer Science & Information Technology](https://www.glbitm.org/academics/departments/computer-science-information-technology): Software engineering, network security, and enterprise applications.
+- [Electrical and Computer Engineering](https://www.glbitm.org/academics/departments/electrical-and-computer-engineering): Hardware engineering, microprocessors, and smart power systems.
+- [Electronics and Communication Engineering](https://www.glbitm.org/academics/departments/electronics-and-communication-engineering): VLSI design, digital signal processing, embedded systems, and telecommunications.
+- [Mechanical Engineering](https://www.glbitm.org/academics/departments/mechanical-engineering): CAD/CAM, thermal systems, mechatronics, robotics, and manufacturing.
+- [Applied Science and Humanities](https://www.glbitm.org/academics/departments/applied-science-and-humanities): Foundational teaching department covering Mathematics, Physics, Chemistry, and Professional English for first-year engineering students.
+- [Master of Business Administration (MBA)](https://www.glbitm.org/academics/departments/master-of-business-administration): Two-year postgraduate management curriculum covering Marketing, Finance, HR, IT, and International Business.
+- [Master of Computer Applications (MCA)](https://www.glbitm.org/academics/departments/master-of-computer-applications): Two-year postgraduate program in software engineering, advanced computing, and cloud architectures.
+- [Faculty Directory](https://www.glbitm.org/academics/faculty): Profiles and credentials of academic teaching staff across departments.
+- [Academic Calendar](https://www.glbitm.org/academics/academic-calendar): Scheduled instructional timelines, semester commencement, and internal examination dates.
+- [NPTEL Local Chapter](https://www.glbitm.org/academics/nptel-local-chapter): Information on the institute's SWAYAM-NPTEL online learning and certification chapter.
+- [Anti-Ragging Measures](https://www.glbitm.org/academics/anti-ragging): Anti-ragging regulations, monitoring squad, and student compliance guidelines.
+
+## Admissions
+
+- [Admissions Overview](https://www.glbitm.org/admissions/overview): Information on admission criteria, accepted entrance tests, and degree eligibility.
+- [Admission Process & Counselling](https://www.glbitm.org/admissions/admission-process): Step-by-step guidance on UPTAC state counselling, JEE Main, and merit-based application.
+- [Apply Online](https://www.glbitm.org/admissions/apply): Digital candidate registration portal for online applications and admission enquiries.
+- [Download Prospectus](https://www.glbitm.org/admissions/prospectus): Official institutional prospectus detailing programs, infrastructure, scholarships, and guidelines.
+- [Admission Guidelines & Policies](https://www.glbitm.org/admissions/guidelines-policies): Regulatory criteria, verification rules, and institutional admission policies.
+- [Fee Refund Policy](https://www.glbitm.org/admissions/refund-policy): Statutory refund schedule and withdrawal rules compliant with AICTE/UGC directives.
+
+## Startup Incubation & Entrepreneurship
+
+GLBITM's GLBCRI has incubated **140 startups**, with a **combined startup valuation of ₹500 crore**, and received **₹10 crore in grant/support funding** for entrepreneurship promotion.
+
+- [GLBITM Incubation Centre](https://www.glbitm.org/research-innovation/incubation): Startup incubation and entrepreneurship opportunities through GLBCRI.
+- [GL Bajaj Center for Research and Incubation (GLBCRI)](https://glbcri.org/): Startup incubation centre established by GLBITM, supporting innovators with mentoring, workspace and prototype-development resources.
+- [AKTU Leader Incubator Award 2026](https://glbcri.org/Incubator-Award-2026.php): Recognition awarded to GLBCRI by Dr. A.P.J. Abdul Kalam Technical University, Lucknow; announced on 10 September 2026.
+- [Incubation Support](https://glbcri.org/Incubation-Support.php): Facilities, mentoring, business support and connections to funding networks.
+- [DST NIDHI-PRAYAS](https://glbcri.org/Nidhi-Prayas.php): Prototype-development support and program application information.
+- [Start in UP](https://glbcri.org/Start-in-UP.php): Uttar Pradesh startup-policy support, program information and application terms.
+
+## Placements & Career Development
+
+- [Placements Overview](https://www.glbitm.org/placements/overview): Recruitment overview, corporate engagement division, and student training methodology.
+- [Placement Records](https://www.glbitm.org/placements/placement-record): Published recruitment statistics and historical campus placement outcomes by batch.
+- [Career Development Centre](https://www.glbitm.org/placements/career-development-centre): Skill enhancement training in aptitude, coding, technical interview skills, and soft skills.
+- [Internships](https://www.glbitm.org/placements/internships): Student industrial training and corporate internship programs.
+- [Industrial Visits](https://www.glbitm.org/placements/industrial-visits): Documented factory and corporate visits for hands-on experiential learning.
+- [Industry-Academia Partnerships](https://www.glbitm.org/placements/industry-academia): Collaborative training programs and corporate knowledge-sharing sessions.
+- [Placement Guidelines](https://www.glbitm.org/placements/guidelines): Placement eligibility rules, code of conduct, and offer acceptance policies.
+- [Corporate Collaborations](https://www.glbitm.org/placements/collaborations): Formal institutional partnerships with industrial organizations.
+- [Recruiter Portal](https://www.glbitm.org/placements/get-in-touch): Portal for corporate talent teams to register and schedule campus recruitment drives.
+
+## Research, Innovation & Entrepreneurship
+
+GLBITM has **2,500 papers published in SCI/Scopus**, **23,000 citations in Scopus** and a **Scopus h-index of 60**, with **776 patents published** and **18 patents granted**.
+
+- [Research & Innovation Overview](https://www.glbitm.org/research-innovation/overview): Scope of departmental research activities and multidisciplinary domains.
+- [Institution's Innovation Council (IIC)](https://www.glbitm.org/research-innovation/iic): Campus innovation activities under the Ministry of Education's Innovation Cell.
+- [Entrepreneurship Cell](https://www.glbitm.org/research-innovation/entrepreneurship-cell): Student-led body organizing startup summits, workshops, and business plan events.
+- [Centres of Excellence](https://www.glbitm.org/facilities/centres-of-excellence): Advanced domain-specific laboratory facilities and partner tech labs.
+- [Centre for Innovation & Learning](https://www.glbitm.org/research-innovation/centre-for-innovation-learning): Practical project development and technology prototyping facilities.
+- [Patents & IPR](https://www.glbitm.org/research-innovation/ipr-patents): Published, granted, and filed intellectual property disclosures.
+- [Research Publications](https://www.glbitm.org/research-innovation/publications): Published academic papers by faculty and research scholars.
+- [R&D Policy](https://www.glbitm.org/research-innovation/rd-policy): Research guidelines, funding support rules, and code of research ethics.
+- [Bhashini Project](https://www.glbitm.org/research-innovation/bhashini): Center for language technology research and Indian language computing.
+
+## Campus Infrastructure & Facilities
+
+- [Academic Facilities](https://www.glbitm.org/facilities/academic): Smart audio-visual lecture rooms, departmental computer centers, and Central Library resources.
+- [Campus Facilities](https://www.glbitm.org/facilities/campus): Residential hostel complexes for boys and girls, sports facilities, cafeterias, and medical room.
+- [Transport Facilities](https://www.glbitm.org/facilities/transport): Fleet of institute buses serving routes across Noida, Greater Noida, Ghaziabad, and Delhi-NCR.
+
+## Quality Assurance & Statutory Compliance
+
+- [IQAC Overview](https://www.glbitm.org/quality-initiatives/iqac): Internal Quality Assurance Cell mandate, objectives, and academic audits.
+- [IQAC Reports](https://www.glbitm.org/quality-initiatives/iqac/reports): Annual Quality Assurance Reports (AQAR) and institutional audit documentation.
+- [IQAC Committee](https://www.glbitm.org/quality-initiatives/iqac/committee): Constitution and member list of the internal quality assurance committee.
+- [Mandatory Disclosures](https://www.glbitm.org/mandatory-disclosure): Regulatory public disclosure document as mandated by AICTE.
+- [Grievance Redressal](https://www.glbitm.org/grievance): Public mechanism for addressing student and employee grievances.
+
+## Official Contact & Location
+
+- [Contact Us](https://www.glbitm.org/contact-us): Official campus location, campus map, verified helplines, and department emails.
+- [Careers](https://www.glbitm.org/careers): Faculty recruitment notices and administrative vacancy applications.
+
+**Direct Enquiries & Location:**
+- **Address:** Plot No. 2, APJ Abdul Kalam Road, Knowledge Park III, Greater Noida, Uttar Pradesh 201306, India
+- **Geo Coordinates:** Latitude 28.472471, Longitude 77.489094 | [Google Maps](https://www.google.com/maps/place/GL+Bajaj+Institute+of+Technology+%26+Management/data=!4m2!3m1!1s0x0:0x8274cec5a1321578)
+- **General Enquiries:** Phone: +91-7290008310, +91-7290008390, +91-8010000234 | Email: `office@glbitm.ac.in`
+- **Admissions Helpline:** +91-8750720005, +91-8750610005, +91-8750730005, +91-8750620005, +91-7835005123
+- **Accounts & Fee Desk:** `accounts@glbitm.ac.in`
+- **Careers Desk:** `careers@glbitm.ac.in`
+
+---
+
+## Optional
+
+- [Campus Life](https://www.glbitm.org/student-corner/campus-life): Extracurricular lifestyle, campus routines, and cultural celebrations.
+- [Student Clubs](https://www.glbitm.org/student-corner/clubs): Student-run technical, cultural, literary, and hobby clubs.
+- [Student Chapters](https://www.glbitm.org/student-corner/student-chapters): Professional society student memberships and chapters.
+- [NCC](https://www.glbitm.org/student-corner/ncc): National Cadet Corps campus unit drills and camps.
+- [NSS](https://www.glbitm.org/student-corner/nss): National Service Scheme social outreach and community initiatives.
+- [Hackathons](https://www.glbitm.org/student-corner/hackathons): Participation in technical hackathons and coding competitions.
+- [Alumni Overview](https://www.glbitm.org/alumni/overview): Alumni network engagement and institutional alumni directory.
+- [Alumni Achievements](https://www.glbitm.org/alumni/achievements): Profiles and milestones of graduated alumni.
+- [News & Events](https://www.glbitm.org/happenings/news-events): Dated event announcements and institutional news items.
+- [Media Coverage](https://www.glbitm.org/happenings/media-coverage): External press clippings and media mentions.
+- [Photo Gallery](https://www.glbitm.org/happenings/gallery): Visual documentation of campus ceremonies, workshops, and sports events.
+- [Blogs](https://www.glbitm.org/blogs): Departmental and institutional educational blog articles.
