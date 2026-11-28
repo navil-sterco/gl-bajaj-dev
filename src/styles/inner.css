@@ -75,7 +75,7 @@
 .admissions-prospectus-page .pdf_iframe{padding:12rem 0 ;}
 .pdf_iframe iframe{height: 100rem;}
 
-.guest_grid{display:grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;}
+.guest_grid{display:grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;}
 .student-corner-clubs-anvitha-club-page .in_essence_section{padding-top:0;}
 .student-corner-clubs-anvitha-club-page .in_essence_section .flash-effect-2{margin-top:0;}
 

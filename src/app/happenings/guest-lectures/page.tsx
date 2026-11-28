@@ -27,7 +27,16 @@ export default async function GuestLecturePage() {
     notFound();
   }
 
-  const pageData = data?.data;
+  const pageData = {
+    ...data?.data,
+    parent_menu:[
+      {
+        "id": 50,
+        "title": "Happenings",
+        "url": "happenings"
+      }
+    ]
+  };
 
   const currentSlug = `happenings/guest-lectures`;
   const expectedPath = pageData?.full_url.replace(/^\/+|\/+$/g, "");
@@ -47,11 +56,26 @@ export default async function GuestLecturePage() {
     languageTag: "en-IN",
     currentPageSlug: `${BASE_URL}happenings/guest-lectures`,
     currentPageName: pageData?.page_title || "",
+    parentMenus:[
+      {
+        title:'Happenings',
+        url:"happenings"
+      },
+    ],
   };
 
   const globalSchema = buildGlobalSchema(globalSchemaArgs);
 
   const newsData = data?.data?.modular?.["news-events"];
+
+  const customTabs = {
+      tabs:[
+        {
+          "title": "Happenings",
+          "slug": "happenings"
+        },
+      ]
+    }
 
   return (
     <>
@@ -71,12 +95,14 @@ export default async function GuestLecturePage() {
       )}
       <div className="happenings_page">
         <PageHeader
-          pathname={`/guest-lectures`}
+          pathname={`/happenings/guest-lectures`}
           data={data?.data}
           slug={"guest-lectures"}
+          parentSlug="happenings"
+          customTabs={customTabs}
         />
         <div className="activites_sec">
-          <div className="container-fluid">
+          <div className="container25">
             {data?.data?.cms?.length == 0 &&
               data?.data?.modular?.length == 0 && <ComingSoon />}
             {newsData.length > 0 && <GuestLectureGrid data={newsData} />}
