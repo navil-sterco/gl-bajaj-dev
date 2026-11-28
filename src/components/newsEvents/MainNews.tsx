@@ -59,7 +59,8 @@ export default function MainNews({ data, slug, departments, currentDepartment }:
                   basePath="/happenings/news-events"
                 />
               </div>
-              <div className="news_cnt">
+              <div className="news_content_outer">
+                <div className="news_cnt">
                 {data?.date && (
                   <p className="date">
                     {new Date(data.date).toLocaleDateString("en-US", {
@@ -82,6 +83,7 @@ export default function MainNews({ data, slug, departments, currentDepartment }:
                     />
                   </Link>
                 )}
+              </div>
               </div>
             </div>
           </div>
