@@ -2135,7 +2135,7 @@ section.facilities_policy.iqac-event.institutional-distinctiveness { padding-bot
 .our_recruiters .our_recruiters-grid li:hover img { transform: scale(1.08); }
 .placement_main { padding-block: 8rem 10rem; }
 .placement_main .row { margin: 0; }
-.placement_main .placement_select{padding: 1rem 2rem 1rem 1rem; font:var(--font-14); border: 1px solid #ccc; background: #fff; cursor: pointer; min-width: 140px;}
+.placement_main .placement_select, .award-sec.alumni_event .placement_select{padding: 1rem 2rem 1rem 1rem; font:var(--font-14); border: 1px solid #ccc; background: #fff; cursor: pointer; min-width: 140px;}
 .placement_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem; }
 .place_box { background-color: #f3e9dced; margin-top: 3rem;}
 .place_infobox h3 { font: var(--font-24); color: #633d27; margin-bottom: 1.5rem; font-weight: bold; }
